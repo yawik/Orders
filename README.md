@@ -1,7 +1,8 @@
 Orders
 ======
 
-This modules injects a form with a bill address into to wizard entering a job posting
+This modules injects a form with a billing address into to wizard entering a job posting. In addition admins can export orders as a csv via the 
+command line.
 
 Build status:
 
