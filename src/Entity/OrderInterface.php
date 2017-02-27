@@ -79,7 +79,7 @@ interface OrderInterface extends EntityInterface, IdentifiableEntityInterface, M
     /**
      * Sets the invoice address.
      *
-     * @param InvoiceAddressInterface $invoice
+     * @param InvoiceAddressInterface $invoiceAddress
      *
      * @return self
      */
