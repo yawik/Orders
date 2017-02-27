@@ -12,7 +12,6 @@ namespace OrdersTest\Entity;
 
 use CoreTestUtils\TestCase\TestInheritanceTrait;
 use CoreTestUtils\TestCase\TestSetterGetterTrait;
-use Greenjobs\Entity\InvoiceAddress;
 use Orders\Entity\Order;
 use Orders\Entity\OrderInterface;
 

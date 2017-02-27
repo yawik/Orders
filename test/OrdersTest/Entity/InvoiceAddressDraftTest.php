@@ -25,7 +25,7 @@ use Orders\Entity\InvoiceAddressDraft;
  * @group  Orders
  * @group  Orders.Entity
  */
-class OrderTest extends \PHPUnit_Framework_TestCase
+class InvoiceAddressDraftTest extends \PHPUnit_Framework_TestCase
 {
     use TestInheritanceTrait, TestSetterGetterTrait;
 
