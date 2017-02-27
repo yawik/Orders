@@ -80,11 +80,12 @@ if ('-' == $sort{0}) {
                 echo implode('</li><li>', array_map(function($p) { return $p->getName(); }, $products));
                      if ($many) { ?></li><li>&hellip; <?php } ?></li></ul></td>
     <td><?php
-        $invoiceAddress = $order->getInvoiceAddress();?>
+        if ($invoiceAddress = $order->getInvoiceAddress()):?>
         <address>
             <strong><?php echo $invoiceAddress->getName() ?></strong> <br>
             <?php echo $invoiceAddress->getCompany(); ?>
         </address>
+            <?php endif ?>
     </td>
     <td class="text-right"><strong><?php echo $this->currencyFormat($order->getPrice(), $order->getCurrency()) ?></strong></td>
 </tr>
