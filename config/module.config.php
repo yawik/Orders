@@ -83,7 +83,7 @@ return [
         'headscript' => [
             'lang/orders' => [
                 [ \Zend\View\Helper\HeadScript::FILE, 'Orders/js/list.index.js', 'PREPEND' ],
-                'js/bootstrap-dialog.min.js'
+                '/assets/bootstrap3-dialog/js/bootstrap-dialog.min.js'
             ],
         ],
     ],
