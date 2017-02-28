@@ -57,7 +57,6 @@ class OrderTest extends \PHPUnit_Framework_TestCase
         [ 'invoiceAddress', '@Orders\Entity\InvoiceAddress' ],
         [ 'entity', '@Orders\Entity\Snapshot\Job\JobSnapshot' ],
         [ 'products','@Core\Entity\Collection\ArrayCollection'],
-
     ];
 
     /**

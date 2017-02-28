@@ -150,6 +150,7 @@ class JobSnapshot implements EntityInterface, SnapshotInterface
     public function setJob(JobInterface $job)
     {
         $this->setEntity($job);
+        return $this;
     }
 
     /**

@@ -52,7 +52,7 @@ trait SnapshotTrait
 
     public function hasEntity()
     {
-        $entity = $this->getEntity();
+        $entity = $this->entity;
 
         if (!$entity instanceOf Proxy) {
             return $entity instanceOf EntityInterface;
