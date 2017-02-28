@@ -87,5 +87,8 @@ return [
             ],
         ],
     ],
+    'classmap' => [
+        'library' => [ __DIR__ . "/../library/autoloader_clsassmap.php"]
+    ]
 ];
   
