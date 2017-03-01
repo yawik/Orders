@@ -4,7 +4,7 @@
 return array(
     'Orders\Repository\Filter\PaginationQuery'                     => __DIR__ . '/Repository/Filter/PaginationQuery.php',
     'Orders\Repository\InvoiceAddressDrafts'                       => __DIR__ . '/Repository/InvoiceAddressDrafts.php',
-    'Orders\Repository\Orders'                                     => __DIR__ . '/Repository/Orders.phsp',
+    'Orders\Repository\Orders'                                     => __DIR__ . '/Repository/Orders.php',
     'Orders\Options\ModuleOptions'                                 => __DIR__ . '/Options/ModuleOptions.php',
     'Orders\View\Helper\FormatInvoiceAddress'                      => __DIR__ . '/View/Helper/FormatInvoiceAddress.php',
     'Orders\Form\InvoiceAddress'                                   => __DIR__ . '/Form/InvoiceAddress.php',
