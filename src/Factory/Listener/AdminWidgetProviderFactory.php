@@ -10,6 +10,7 @@
 /** */
 namespace Orders\Factory\Listener;
 
+use Interop\Container\ContainerInterface;
 use Orders\Listener\AdminWidgetProvider;
 use Zend\ServiceManager\FactoryInterface;
 use Zend\ServiceManager\ServiceLocatorInterface;
@@ -23,6 +24,25 @@ use Zend\ServiceManager\ServiceLocatorInterface;
 class AdminWidgetProviderFactory implements FactoryInterface
 {
     /**
+     * Create a AdminWidgetProvider listener
+     *
+     * @param  ContainerInterface $container
+     * @param  string             $requestedName
+     * @param  null|array         $options
+     *
+     * @return AdminWidgetProvider
+     */
+    public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
+    {
+        $repositories = $container->get('repositories');
+        $orders       = $repositories->get('Orders');
+        $drafts       = $repositories->get('Orders/InvoiceAddressDraft');
+        $listener     = new AdminWidgetProvider($orders, $drafts);
+
+        return $listener;
+    }
+
+    /**
      * Create service
      *
      * @param ServiceLocatorInterface $serviceLocator
@@ -31,12 +51,7 @@ class AdminWidgetProviderFactory implements FactoryInterface
      */
     public function createService(ServiceLocatorInterface $serviceLocator)
     {
-        $repositories = $serviceLocator->get('repositories');
-        $orders       = $repositories->get('Orders');
-        $drafts       = $repositories->get('Orders/InvoiceAddressDraft');
-        $listener     = new AdminWidgetProvider($orders, $drafts);
-
-        return $listener;
+        return $this($serviceLocator, AdminWidgetProvider::class);
     }
 
 
