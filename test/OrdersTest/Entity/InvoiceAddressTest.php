@@ -65,7 +65,7 @@ class InvoiceAddressTest extends \PHPUnit_Framework_TestCase
         [ 'region', 'TestRegion' ],
         [ 'street', 'TestStreet 123' ],
         [ 'gender', 'm' ],
-        [ 'vatIdNumber', '1234' ],
+        [ 'vatId', '1234' ],
         [ 'zipCode', '1234' ],
     ];
 }

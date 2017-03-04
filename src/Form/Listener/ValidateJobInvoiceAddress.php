@@ -28,7 +28,7 @@ class ValidateJobInvoiceAddress
     {
         $invoiceAddress = $event->getForm()->getForm('invoice.invoiceAddress')->getObject();
 
-        foreach (['name', 'company', 'street', 'city', 'vatIdNumber'] as $field) {
+        foreach (['name', 'company', 'street', 'city', 'vatId'] as $field) {
             $value = $invoiceAddress->{"get$field"}();
             if (empty($value)) {
                 return  /*@translate*/ 'Please fill in and check your invoice address.';

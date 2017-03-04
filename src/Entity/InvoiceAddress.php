@@ -201,14 +201,14 @@ class InvoiceAddress implements InvoiceAddressInterface
         return $this->gender;
     }
 
-    public function setVatIdNumber($vatId)
+    public function setVatId($vatId)
     {
         $this->vatId = $vatId;
 
         return $this;
     }
 
-    public function getVatIdNumber()
+    public function getVatId()
     {
         return $this->vatId;
     }
