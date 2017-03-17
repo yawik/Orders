@@ -69,7 +69,7 @@ if ('-' == $sort{0}) {
 
 <tbody>
 <?php foreach ($this->orders as $order): /* @var  \Orders\Entity\OrderInterface $order */?>
-<tr data-orderid="<?php echo $order->getId() ?>" data-ordernumber="<?php echo $order->getNumber() ?>" data-ordertype="<?php echo $order->getType() ?>">
+<tr data-orderid="<?php echo $order->getId() ?>" data-ordernumber="<?php echo $order->getNumber() ?>" data-ordertype="<?=$order->getType() ?>">
     <td><?php echo $this->dateFormat($order->getDateCreated()) ?></td>
     <td><?php echo $order->getType(); ?> <br> <?php echo $order->getNumber() ?></td>
     <td><ul><li><?php
@@ -77,7 +77,10 @@ if ('-' == $sort{0}) {
                 $many = 3 < count($products);
                 $products = array_slice($products, 0, 3);
 
-                echo implode('</li><li>', array_map(function($p) { return $p->getName(); }, $products));
+                echo implode('</li><li>', array_map(function($p) {
+                    /* @var Orders\Entity\ProductInterface $p */
+                    return $p->getName();
+                }, $products));
                      if ($many) { ?></li><li>&hellip; <?php } ?></li></ul></td>
     <td><?php
         if ($invoiceAddress = $order->getInvoiceAddress()):?>
@@ -93,4 +96,4 @@ if ('-' == $sort{0}) {
 </tbody>
 
 </table>
-<?php echo $this->paginationControl($this->orders, 'Sliding', 'pagination-control', array('lang' => $this->params('lang'), 'route' => 'lang/orders'));?>
+<?=$this->paginationControl($this->orders, 'Sliding', 'pagination-control', array('lang' => $this->params('lang'), 'route' => 'lang/orders'));?>

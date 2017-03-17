@@ -157,6 +157,15 @@ interface OrderInterface extends EntityInterface, IdentifiableEntityInterface, M
     public function getTaxRate();
 
     /**
+     * Gets the price.
+     *
+     * @para $type string [pretax|net|tax]
+     *
+     * @return array
+     */
+    public function getPrice($type);
+
+    /**
      * Gets the prices.
      *
      * @return array

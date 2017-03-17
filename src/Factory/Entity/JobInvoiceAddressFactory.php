@@ -12,7 +12,6 @@ namespace Orders\Factory\Entity;
 
 use Core\Entity\Hydrator\EntityHydrator;
 use Interop\Container\ContainerInterface;
-use Interop\Container\Exception\ContainerException;
 use Orders\Entity\InvoiceAddress;
 use Settings\Entity\Hydrator\SettingsEntityHydrator;
 use Zend\ServiceManager\FactoryInterface;
@@ -34,10 +33,6 @@ class JobInvoiceAddressFactory implements FactoryInterface
      * @param  null|array         $options
      *
      * @return InvoiceAddress
-     * @throws ServiceNotFoundException if unable to resolve the service.
-     * @throws ServiceNotCreatedException if an exception is raised when
-     *     creating a service.
-     * @throws ContainerException if any other error occurs
      */
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
