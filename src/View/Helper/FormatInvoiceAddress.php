@@ -38,7 +38,7 @@ class FormatInvoiceAddress extends AbstractHelper
         $region = $address->getRegion();
         $country = $address->getCountry();
         $location = ($region ? "$region / " : '') . $country;
-        $vatId = '<em>' . $translate('VAT ID') . '</em>: ' . $address->getVatIdNumber();
+        $vatId = '<em>' . $translate('VAT ID') . '</em>: ' . $address->getVatId();
         $email = $address->getEmail();
         $email = $email ? '<i class="fa fa-envelope"></i> ' . $this->getView()->plugin('link')->__invoke($email) : '';
 

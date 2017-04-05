@@ -10,6 +10,7 @@
 /** */
 namespace Orders\Factory\Form\Listener;
 
+use Interop\Container\ContainerInterface;
 use Orders\Form\Listener\BindInvoiceAddressEntity;
 use Zend\ServiceManager\FactoryInterface;
 use Zend\ServiceManager\ServiceLocatorInterface;
@@ -23,6 +24,26 @@ use Zend\ServiceManager\ServiceLocatorInterface;
 class BindInvoiceAddressEntityFactory implements FactoryInterface
 {
     /**
+     * Create a BindInvoiceAddressEntity listener
+     *
+     * @param  ContainerInterface $container
+     * @param  string             $requestedName
+     * @param  null|array         $options
+     *
+     * @return BindInvoiceAddressEntity
+     */
+    public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
+    {
+        $repositories = $container->get('repositories');
+        $drafts       = $repositories->get('Orders/InvoiceAddressDraft');
+        $orders       = $repositories->get('Orders');
+        $callback     = function() use ($container) { return $container->get('Orders/Entity/JobInvoiceAddress'); };
+        $listener     = new BindInvoiceAddressEntity($orders, $drafts, $callback);
+
+        return $listener;
+    }
+
+    /**
      * Create service
      *
      * @param ServiceLocatorInterface $serviceLocator
@@ -31,14 +52,7 @@ class BindInvoiceAddressEntityFactory implements FactoryInterface
      */
     public function createService(ServiceLocatorInterface $serviceLocator)
     {
-        $repositories = $serviceLocator->get('repositories');
-        $drafts       = $repositories->get('Orders/InvoiceAddressDraft');
-        $orders       = $repositories->get('Orders');
-        $callback     = function() use ($serviceLocator) { return $serviceLocator->get('Orders/Entity/JobInvoiceAddress'); };
-        $listener     = new BindInvoiceAddressEntity($orders, $drafts, $callback);
-
-        return $listener;
-
+        return $this($serviceLocator, BindInvoiceAddressEntity::class);
     }
 
 

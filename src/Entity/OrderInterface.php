@@ -79,7 +79,7 @@ interface OrderInterface extends EntityInterface, IdentifiableEntityInterface, M
     /**
      * Sets the invoice address.
      *
-     * @param InvoiceAddressInterface $invoice
+     * @param InvoiceAddressInterface $invoiceAddress
      *
      * @return self
      */
@@ -155,6 +155,15 @@ interface OrderInterface extends EntityInterface, IdentifiableEntityInterface, M
      * @return float
      */
     public function getTaxRate();
+
+    /**
+     * Gets the price.
+     *
+     * @para $type string [pretax|net|tax]
+     *
+     * @return array
+     */
+    public function getPrice($type);
 
     /**
      * Gets the prices.

@@ -25,31 +25,23 @@ class Module implements Feature\AutoloaderProviderInterface, Feature\ConfigProvi
     {
         $env    = getenv('APPLICATION_ENV') ?: 'production';
         $config = [
+            'Zend\Loader\ClassMapAutoloader' => [
+                __DIR__ . '/src/autoload_classmap.php'
+            ],
             'Zend\Loader\StandardAutoloader' => [
                 'namespaces' => [
                     __NAMESPACE__ => __DIR__ . '/src',
                 ],
             ],
         ];
-
-        switch ($env) {
-            default:
-                break;
-
-            case 'production':
-                $config['Zend\Loader\ClassMapAutoloader'] = [
-                    __DIR__ . '/src/autoload_classmap.php',
-                ];
-                break;
-
-            case 'testing':
-                $config['Zend\Loader\StandardAutoloader']['namespaces'][__NAMESPACE__ . 'Test']
+        if ('testing' == $env) {
+            $config['Zend\Loader\StandardAutoloader']['namespaces'][__NAMESPACE__ . 'Test']
                     = __DIR__ . '/test/' . __NAMESPACE__ . 'Test';
-                break;
         }
-
+        
         return $config;
     }
+
 
     public function getConfig()
     {

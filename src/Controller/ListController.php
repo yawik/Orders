@@ -24,7 +24,7 @@ class ListController extends AbstractActionController
     public function indexAction()
     {
         return $this->pagination([
-                                     'form' => ['Core/TextSearch', 'as' => 'form'],
+                                     'form' => ['CoreSearch', 'as' => 'form'],
                                      'paginator' => ['Orders', [ 'sort' => 'date'], 'as' => 'orders']
                                  ]);
     }

@@ -86,7 +86,7 @@ class InvoiceAddressFieldset extends Fieldset
 
         $this->add([
                        'type'    => 'text',
-                       'name'    => 'vatIdNumber',
+                       'name'    => 'vatId',
                        'options' => [
                            'label' => /*@translate*/ 'Value added tax ID',
                        ],

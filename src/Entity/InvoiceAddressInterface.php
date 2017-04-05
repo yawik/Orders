@@ -156,14 +156,14 @@ interface InvoiceAddressInterface extends EntityInterface
      *
      * @return self
      */
-    public function setVatIdNumber($vatId);
+    public function setVatId($vatId);
 
     /**
      * Gets the value added tax identification number.
      *
      * @return string
      */
-    public function getVatIdNumber();
+    public function getVatId();
 
     /**
      * Sets the email address.

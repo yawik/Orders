@@ -11,6 +11,7 @@
 namespace Orders\Factory\Entity;
 
 use Core\Entity\Hydrator\EntityHydrator;
+use Interop\Container\ContainerInterface;
 use Orders\Entity\InvoiceAddress;
 use Settings\Entity\Hydrator\SettingsEntityHydrator;
 use Zend\ServiceManager\FactoryInterface;
@@ -25,15 +26,17 @@ use Zend\ServiceManager\ServiceLocatorInterface;
 class JobInvoiceAddressFactory implements FactoryInterface
 {
     /**
-     * Create service
+     * Create an InvoiceAddress form
      *
-     * @param ServiceLocatorInterface $serviceLocator
+     * @param  ContainerInterface $container
+     * @param  string             $requestedName
+     * @param  null|array         $options
      *
-     * @return mixed
+     * @return InvoiceAddress
      */
-    public function createService(ServiceLocatorInterface $serviceLocator)
+    public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
-        $auth = $serviceLocator->get('AuthenticationService');
+        $auth = $container->get('AuthenticationService');
         $user = $auth->getUser();
         $settings = $user->getSettings('Orders');
         $invoiceAddress = $settings->getInvoiceAddress();
@@ -77,6 +80,19 @@ class JobInvoiceAddressFactory implements FactoryInterface
             $entity   = $entityHydrator->hydrate($data, $entity);
         }
         return $entity;
+
+    }
+
+    /**
+     * Create service
+     *
+     * @param ServiceLocatorInterface $serviceLocator
+     *
+     * @return mixed
+     */
+    public function createService(ServiceLocatorInterface $serviceLocator)
+    {
+        return $this($serviceLocator, InvoiceAddress::class);
     }
 
 
