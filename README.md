@@ -18,6 +18,8 @@ running [YAWIK](https://github.com/cross-solution/YAWIK)
 Installation
 ------------
 
+recommended
+
 ```
 cd YAWIK/module
 git clone https://github.com/yawik/Orders.git
