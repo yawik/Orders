@@ -27,10 +27,13 @@ return [
         'invokables' => [
             'Orders/InvoiceAddress' => 'Orders\Form\InvoiceAddress',
             'Orders/InvoiceAddressFieldset' => 'Orders\Form\InvoiceAddressFieldset',
-            'Orders/InvoiceAddressSettingsFieldset' => '\Orders\Form\InvoiceAddressSettingsFieldset',
         ],
         'factories' => [
             'Orders/JobInvoiceAddress' => 'Orders\Factory\Form\JobInvoiceAddressFactory',
+            \Orders\Form\InvoiceAddressSettingsFieldset::class => \Settings\Form\Factory\SettingsFieldsetFactory::class,
+        ],
+        'aliases' => [
+            'Orders/InvoiceAddressSettingsFieldset' => \Orders\Form\InvoiceAddressSettingsFieldset::class,
         ],
     ],
 
