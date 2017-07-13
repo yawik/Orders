@@ -36,7 +36,7 @@ class CreateJobOrderFactory implements FactoryInterface
     {
         $options         = $container->get('Orders/Options/Module');
         $providerOptions = $container->get('Jobs/Options/Provider');
-        $priceFilter     = $container->get('filtermanager')->get('Jobs/ChannelPrices');
+        $priceFilter     = $container->get('FilterManager')->get('Jobs/ChannelPrices');
         $repositories    = $container->get('repositories');
         $repository      = $repositories->get('Orders');
         $draftrepo       = $repositories->get('Orders/InvoiceAddressDraft');
