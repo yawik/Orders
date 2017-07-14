@@ -18,8 +18,8 @@ return [
     ],
 
     'controllers' => [
-        'invokables' => [
-            'Orders/List' => 'Orders\Controller\ListController',
+        'factories' => [
+            'Orders/List' => [\Orders\Controller\ListController::class,'factory'],
         ],
     ],
 
@@ -27,10 +27,10 @@ return [
         'invokables' => [
             'Orders/InvoiceAddress' => 'Orders\Form\InvoiceAddress',
             'Orders/InvoiceAddressFieldset' => 'Orders\Form\InvoiceAddressFieldset',
-            'Orders/InvoiceAddressSettingsFieldset' => '\Orders\Form\InvoiceAddressSettingsFieldset',
         ],
         'factories' => [
             'Orders/JobInvoiceAddress' => 'Orders\Factory\Form\JobInvoiceAddressFactory',
+            'Orders/InvoiceAddressSettingsFieldset' => \Settings\Form\Factory\SettingsFieldsetFactory::class,
         ],
     ],
 

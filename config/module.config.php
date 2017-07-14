@@ -47,9 +47,9 @@ return [
         ]],
 
         'Jobs/JobContainer/Events' => [ 'listeners' => [
-            '\Orders\Form\Listener\DisableJobInvoiceAddress' => 'DisableElements',
+            'Orders\Form\Listener\DisableJobInvoiceAddress' => 'DisableElements',
             'Orders\Form\Listener\InjectInvoiceAddressInJobContainer' => \Core\Form\Event\FormEvent::EVENT_INIT,
-            '\Orders\Form\Listener\ValidateJobInvoiceAddress' => 'ValidateJob',
+            'Orders\Form\Listener\ValidateJobInvoiceAddress' => 'ValidateJob',
         ]],
 
         'Orders/Form/InvoiceAddress/Events' => [
