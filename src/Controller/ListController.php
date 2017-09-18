@@ -10,6 +10,8 @@
 /** */
 namespace Orders\Controller;
 
+use Core\Factory\ContainerAwareInterface;
+use Interop\Container\ContainerInterface;
 use Zend\Mvc\Controller\AbstractActionController;
 
 /**
@@ -18,15 +20,33 @@ use Zend\Mvc\Controller\AbstractActionController;
  * @author Mathias Gelhausen <gelhausen@cross-solution.de>
  * @todo write test
  */
-class ListController extends AbstractActionController
+class ListController extends AbstractActionController implements ContainerAwareInterface
 {
-
-    public function indexAction()
+	
+	/**
+	 * @param ContainerInterface $container
+	 *
+	 * @return ListController
+	 */
+	static public function factory(ContainerInterface $container)
+	{
+		$ob = new self();
+		$ob->setContainer($container);
+		return $ob;
+	}
+	
+	public function setContainer( ContainerInterface $container )
+	{
+	
+	}
+	
+	
+	public function indexAction()
     {
         return $this->pagination([
-                                     'form' => ['CoreSearch', 'as' => 'form'],
-                                     'paginator' => ['Orders', [ 'sort' => 'date'], 'as' => 'orders']
-                                 ]);
+			'form' => ['Core/Search', 'as' => 'form'],
+			'paginator' => ['Orders', [ 'sort' => 'date'], 'as' => 'order']
+		]);
     }
 
     public function viewAction()
