@@ -30,10 +30,7 @@ return [
         ],
         'factories' => [
             'Orders/JobInvoiceAddress' => 'Orders\Factory\Form\JobInvoiceAddressFactory',
-            \Orders\Form\InvoiceAddressSettingsFieldset::class => \Settings\Form\Factory\SettingsFieldsetFactory::class,
-        ],
-        'aliases' => [
-            'Orders/InvoiceAddressSettingsFieldset' => \Orders\Form\InvoiceAddressSettingsFieldset::class,
+            'Orders/InvoiceAddressSettingsFieldset' => \Settings\Form\Factory\SettingsFieldsetFactory::class,
         ],
     ],
 
