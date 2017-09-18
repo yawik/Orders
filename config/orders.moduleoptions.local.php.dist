@@ -9,21 +9,21 @@ $options = [
          *
          * @var string
          */
-        'currency' => 'EUR';
+        'currency' => 'EUR',
 
         /**
          * Currency symbol.
          *
          * @var string
          */
-        'currencySymbol' => '€'
+        'currencySymbol' => '€',
 
         /**
          * The tax rate in percent.
          *
          * @var float
          */
-        'taxRate' => 19;
+        'taxRate' => 19,
 
 ];
 
