@@ -7,8 +7,7 @@
  * @copyright  2013 - 2016 Cross Solution <http://cross-solution.de>
  */
 return [
-
-    'service_manager' => [
+	'service_manager' => [
         'factories' => [
             'Orders/Listener/BindInvoiceAddressEntity' => 'Orders\Factory\Form\Listener\BindInvoiceAddressEntityFactory',
             'Orders/Listener/CreateJobOrder' => 'Orders\Factory\Listener\CreateJobOrderFactory',
@@ -26,11 +25,11 @@ return [
     'form_elements' => [
         'invokables' => [
             'Orders/InvoiceAddress' => 'Orders\Form\InvoiceAddress',
-            'Orders/InvoiceAddressFieldset' => 'Orders\Form\InvoiceAddressFieldset',
         ],
         'factories' => [
             'Orders/JobInvoiceAddress' => 'Orders\Factory\Form\JobInvoiceAddressFactory',
             'Orders/InvoiceAddressSettingsFieldset' => \Settings\Form\Factory\SettingsFieldsetFactory::class,
+            'Orders/InvoiceAddressFieldset' => \Orders\Factory\Form\InvoiceAddressFieldsetFactory::class,
         ],
     ],
 

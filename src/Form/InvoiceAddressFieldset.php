@@ -11,6 +11,8 @@
 namespace Orders\Form;
 
 use Core\Entity\Hydrator\EntityHydrator;
+use Core\Form\CustomizableFieldsetInterface;
+use Core\Form\CustomizableFieldsetTrait;
 use Zend\Form\Fieldset;
 
 /**
@@ -19,9 +21,11 @@ use Zend\Form\Fieldset;
  * @author Mathias Gelhausen <gelhausen@cross-solution.de>
  * @todo   write test
  */
-class InvoiceAddressFieldset extends Fieldset
+class InvoiceAddressFieldset extends Fieldset implements CustomizableFieldsetInterface
 {
 
+	use CustomizableFieldsetTrait;
+	
     public function init()
     {
         $this->setName('invoiceAddress');

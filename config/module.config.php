@@ -68,6 +68,9 @@ return [
         'Orders/Options/Module' => [
             'class' => '\Orders\Options\ModuleOptions',
         ],
+        'Orders/InvoiceAddressOptions' => [
+	        'class' => \Orders\Options\InvoiceAddressOptions::class
+        ]
     ],
 
     'Orders' => [

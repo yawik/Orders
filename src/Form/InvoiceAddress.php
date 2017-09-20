@@ -11,9 +11,7 @@
 namespace Orders\Form;
 
 use Core\Form\Event\FormEvent;
-use Core\Form\Form;
 use Core\Form\SummaryForm;
-use Orders\Entity\InvoiceAddressInterface;
 use Zend\EventManager\EventManagerInterface;
 
 /**
@@ -58,8 +56,7 @@ class InvoiceAddress extends SummaryForm
 
         return $this;
     }
-
-
+	
     public function isValid()
     {
         $valid = parent::isValid();
@@ -69,6 +66,6 @@ class InvoiceAddress extends SummaryForm
 
         return $valid;
     }
-
-
+	
+	
 }

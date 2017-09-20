@@ -1,0 +1,65 @@
+<?php
+/**
+ * YAWIK
+ *
+ * Configuration file of the MailService
+ *
+ * Copy this file into your autoload directory (without .dist) and adjust it for your needs
+ *
+ * @copyright (c) 2013 - 2017 Cross Solution (http://cross-solution.de)
+ * @license   MIT
+ */
+
+/**
+ * Configure, which search fields should be shown on the jobboard search
+ *
+ * @var string
+ */
+$fields = [
+	'company' => [
+		'enabled' => true,
+	],
+	'street' => [
+		'enabled' => true,
+	],
+	'zipCode' => [
+		'enabled' => true,
+	],
+	'city' => [
+		'enabled' => true,
+	],
+	'region' => [
+		'enabled' => true,
+	],
+	'country' => [
+		'enabled' => true,
+	],
+	'vatId' => [
+		'enabled' => true,
+	],
+	'gender' => [
+		'enabled' => true,
+	],
+	'name' => [
+		'enabled' => true,
+	],
+	'email' => [
+		'enabled' => true,
+	]
+];
+
+
+
+//
+// Do not change below this line!
+//
+
+return [
+    'options' => [
+        'Orders/InvoiceAddressOptions' => [
+            'options' => [
+                'fields' => $fields,
+            ],
+        ],
+    ]
+];
