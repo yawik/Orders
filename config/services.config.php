@@ -28,9 +28,12 @@ return [
         ],
         'factories' => [
             'Orders/JobInvoiceAddress' => 'Orders\Factory\Form\JobInvoiceAddressFactory',
-            'Orders/InvoiceAddressSettingsFieldset' => \Settings\Form\Factory\SettingsFieldsetFactory::class,
+            \Orders\Form\InvoiceAddressSettingsFieldset::class => \Settings\Form\Factory\SettingsFieldsetFactory::class,
             'Orders/InvoiceAddressFieldset' => \Orders\Factory\Form\InvoiceAddressFieldsetFactory::class,
         ],
+        'aliases' => [
+            'Orders/InvoiceAddressSettingsFieldset' => \Orders\Form\InvoiceAddressSettingsFieldset::class,
+        ]
     ],
 
     'filters' => [
