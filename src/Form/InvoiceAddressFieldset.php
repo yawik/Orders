@@ -54,6 +54,15 @@ class InvoiceAddressFieldset extends Fieldset implements CustomizableFieldsetInt
 
         $this->add([
                        'type'    => 'text',
+                       'name'    => 'houseNumber',
+                       'options' => [
+                           'label' => /*@translate*/ 'house number',
+                       ],
+                   ]
+        );
+
+        $this->add([
+                       'type'    => 'text',
                        'name'    => 'zipCode',
                        'options' => [
                            'label' => /* @translate */ 'Postalcode'

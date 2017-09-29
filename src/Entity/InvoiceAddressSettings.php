@@ -44,12 +44,20 @@ class InvoiceAddressSettings extends Container
     protected $company;
 
     /**
-     * Street name and house number.
+     * Street name.
      *
      * @ODM\String
      * @var string
      */
     protected $street;
+
+    /**
+     * house number.
+     *
+     * @ODM\String
+     * @var string
+     */
+    protected $houseNumber;
 
     /**
      * Zip code.

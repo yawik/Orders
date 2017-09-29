@@ -19,7 +19,6 @@ use \Doctrine\ODM\MongoDB\Mapping\Annotations as ODM;
  * @ODM\EmbeddedDocument
 
  * @author Mathias Gelhausen <gelhausen@cross-solution.de>
- * @todo write test 
  */
 class InvoiceAddress implements InvoiceAddressInterface
 {
@@ -50,12 +49,20 @@ class InvoiceAddress implements InvoiceAddressInterface
     protected $company;
 
     /**
-     * Street name and house number.
+     * Street name.
      *
      * @ODM\String
      * @var string
      */
     protected $street;
+
+    /**
+     * houseNumber.
+     *
+     * @ODM\String
+     * @var string
+     */
+    protected $houseNumber;
 
     /**
      * Zip code.
@@ -187,6 +194,18 @@ class InvoiceAddress implements InvoiceAddressInterface
     public function getStreet()
     {
         return $this->street;
+    }
+
+    public function setHouseNumber($houseNumber)
+    {
+        $this->houseNumber = $houseNumber;
+
+        return $this;
+    }
+
+    public function getHouseNumber()
+    {
+        return $this->houseNumber;
     }
 
     public function setGender($gender)

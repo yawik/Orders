@@ -70,7 +70,7 @@ interface InvoiceAddressInterface extends EntityInterface
     public function getCompany();
 
     /**
-     * Sets the street name (incl. house number).
+     * Sets the street name.
      *
      * @param string $street
      *
@@ -84,6 +84,24 @@ interface InvoiceAddressInterface extends EntityInterface
      * @return string
      */
     public function getStreet();
+
+    /**
+     * Sets the house number.
+     *
+     * @param string $houseNumber
+     *
+     * @return self
+     */
+    public function setHouseNumber($houseNumber);
+
+    /**
+     * Gets the house number.
+     *
+     * @param string $houseNumber
+     *
+     * @return self
+     */
+    public function getHouseNumber();
 
     /**
      * Sets the zip code.
