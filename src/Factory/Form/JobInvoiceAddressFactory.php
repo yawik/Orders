@@ -12,8 +12,8 @@ namespace Orders\Factory\Form;
 
 use Interop\Container\ContainerInterface;
 use Orders\Form\InvoiceAddress;
-use Zend\ServiceManager\FactoryInterface;
-use Zend\ServiceManager\ServiceLocatorInterface;
+use Zend\ServiceManager\Factory\FactoryInterface;
+
 
 
 /**
@@ -24,13 +24,6 @@ use Zend\ServiceManager\ServiceLocatorInterface;
  */
 class JobInvoiceAddressFactory implements FactoryInterface
 {
-    protected $options;
-
-
-    public function __construct($options = [])
-    {
-        $this->options = $options;
-    }
 
     /**
      * Create a InvoiceAddress form
@@ -44,23 +37,10 @@ class JobInvoiceAddressFactory implements FactoryInterface
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
         $events = $container->get('Orders/Form/InvoiceAddress/Events');
-        $invoice = new InvoiceAddress($this->options['name'], $this->options);
+        $invoice = new InvoiceAddress($options['name'], $options);
         $invoice->setEventManager($events);
 
         return $invoice;
     }
-
-    /**
-     * Create service
-     *
-     * @param ServiceLocatorInterface $serviceLocator
-     *
-     * @return mixed
-     */
-    public function createService(ServiceLocatorInterface $serviceLocator)
-    {
-        return $this($serviceLocator->getServiceLocator(), InvoiceAddress::class);
-    }
-
 
 }

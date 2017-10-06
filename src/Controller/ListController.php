@@ -45,7 +45,7 @@ class ListController extends AbstractActionController implements ContainerAwareI
     {
         return $this->pagination([
 			'form' => ['Core/Search', 'as' => 'form'],
-			'paginator' => ['Orders', [ 'sort' => 'date'], 'as' => 'order']
+			'paginator' => ['Orders', [ 'sort' => 'date'], 'as' => 'orders']
 		]);
     }
 
