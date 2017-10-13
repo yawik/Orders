@@ -15,7 +15,7 @@ return [
                 'pages' => [
                     'orders' => [
                         'label'    =>  /*@translate*/ 'Orders',
-                        'route'    => 'lang/orders',
+                        'route'    => 'lang/orders-list',
                         'order'    => '100',
                         'resource' => 'Orders/Navigation',
                     ],

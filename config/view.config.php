@@ -12,6 +12,6 @@ return [ 'view_manager' => [ 'template_map' => [
 
     'orders/list/index' => $dir . '/orders/list/index.phtml',
     'orders/list/index.ajax' => $dir . '/orders/list/index.ajax.phtml',
-    'orders/list/view' => $dir . '/orders/list/view.phtml',
+    'orders/view/index' => $dir . '/orders/view/index.phtml',
 
 ]]];

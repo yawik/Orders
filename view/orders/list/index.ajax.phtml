@@ -55,7 +55,7 @@ if ('-' == $sort{0}) {
                 endif;
                 $sortParam = array('sort' => ($dir ? '' : '-') . $spec['sort']);
                 $url = $this->url(
-                            'lang/orders', array(),
+                            'lang/orders-list', array(),
                             array('query' => array_merge($this->params()->fromQuery(), $sortParam)),
                             true
                 );

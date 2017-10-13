@@ -8,16 +8,26 @@
  */
 return [ 'router' => [ 'routes' => [ 'lang' => [ 'child_routes' => [
 
-    'orders' => [
-        'type' => 'Segment',
+    'orders-list' => [
+        'type' => 'Literal',
         'options' => [
-            'route' => '/orders[/:action]',
+            'route' => '/orders',
             'defaults' => [
                 'controller' => 'Orders/List',
                 'action' => 'index'
             ],
         ],
         'may_terminate' => true,
+    ],
+
+    'orders-view' => [
+        'type' => 'Literal',
+        'options' => [
+            'route' => '/orders/view',
+            'defaults' => [
+                'controller' => \Orders\Controller\ViewController::class
+            ],
+        ],
     ],
 
 ]]]]];

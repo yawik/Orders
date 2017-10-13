@@ -6,6 +6,9 @@
  * @license MIT
  * @copyright  2013 - 2016 Cross Solution <http://cross-solution.de>
  */
+
+namespace Orders;
+
 return [
 	'service_manager' => [
         'factories' => [
@@ -20,6 +23,9 @@ return [
         'invokables' => [
             'Orders/List' => 'Orders\Controller\ListController',
         ],
+        'factories' => [
+            Controller\ViewController::class => Factory\Controller\ViewControllerFactory::class,
+        ],
     ],
 
     'form_elements' => [
@@ -28,11 +34,11 @@ return [
         ],
         'factories' => [
             'Orders/JobInvoiceAddress' => 'Orders\Factory\Form\JobInvoiceAddressFactory',
-            \Orders\Form\InvoiceAddressSettingsFieldset::class => \Settings\Form\Factory\SettingsFieldsetFactory::class,
-            'Orders/InvoiceAddressFieldset' => \Orders\Factory\Form\InvoiceAddressFieldsetFactory::class,
+            Form\InvoiceAddressSettingsFieldset::class => \Settings\Form\Factory\SettingsFieldsetFactory::class,
+            'Orders/InvoiceAddressFieldset' => Factory\Form\InvoiceAddressFieldsetFactory::class,
         ],
         'aliases' => [
-            'Orders/InvoiceAddressSettingsFieldset' => \Orders\Form\InvoiceAddressSettingsFieldset::class,
+            'Orders/InvoiceAddressSettingsFieldset' => Form\InvoiceAddressSettingsFieldset::class,
         ]
     ],
 
