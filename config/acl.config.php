@@ -13,7 +13,8 @@ return [ 'acl' => [
         'admin' => [
             'allow' => [
                 'Orders/Navigation',
-                'route/lang/orders',
+                'route/lang/orders-list',
+				'route/lang/orders-view',
             ],
         ],
     ],
