@@ -120,7 +120,7 @@ class Builder implements BuilderInterface
                 'region' => $location->getRegion(),
                 'zipCode' => $location->getPostalCode(),
                 'country' => $location->getCountry(),
-                'coordinates' => $location->getCoordinates()->getCoordinates(),
+                'coordinates' => $location->getCoordinates() ? $location->getCoordinates()->getCoordinates() : null,
             ];
         }
 
