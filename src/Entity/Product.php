@@ -24,7 +24,7 @@ class Product implements ProductInterface
     /**
      * The name of the product.
      *
-     * @ODM\String
+     * @ODM\Field(type="string")
      * @var string
      */
     protected $name;
@@ -32,7 +32,7 @@ class Product implements ProductInterface
     /**
      * The product number
      *
-     * @ODM\String
+     * @ODM\Field(type="string")
      * @var string
      */
     protected $productNumber;

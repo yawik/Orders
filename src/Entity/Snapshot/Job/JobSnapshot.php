@@ -32,7 +32,7 @@ class JobSnapshot implements EntityInterface, SnapshotInterface
     /**
      * Title of the job
      *
-     * @ODM\String
+     * @ODM\Field(type="string")
      * @var string
      */
     protected $title;
@@ -40,7 +40,7 @@ class JobSnapshot implements EntityInterface, SnapshotInterface
     /**
      * Reference number
      *
-     * @ODM\String
+     * @ODM\Field(type="string")
      * @var string
      */
     protected $reference;
@@ -48,7 +48,7 @@ class JobSnapshot implements EntityInterface, SnapshotInterface
     /**
      * Language of the job
      *
-     * @ODM\String
+     * @ODM\Field(type="string")
      * @var string
      */
     protected $language;
@@ -56,7 +56,7 @@ class JobSnapshot implements EntityInterface, SnapshotInterface
     /**
      * Uri
      *
-     * @ODM\String
+     * @ODM\Field(type="string")
      * @var string
      */
     protected $link;
@@ -72,7 +72,7 @@ class JobSnapshot implements EntityInterface, SnapshotInterface
     /**
      * Apply uri
      *
-     * @ODM\String
+     * @ODM\Field(type="string")
      * @var string
      */
     protected $uriApply;
@@ -80,7 +80,7 @@ class JobSnapshot implements EntityInterface, SnapshotInterface
     /**
      * Apply id
      *
-     * @ODM\String
+     * @ODM\Field(type="string")
      * @var string
      */
     protected $applyId;
@@ -88,7 +88,7 @@ class JobSnapshot implements EntityInterface, SnapshotInterface
     /**
      * Publisher uri
      *
-     * @ODM\String
+     * @ODM\Field(type="string")
      * @var string
      */
     protected $uriPublisher;
@@ -96,7 +96,7 @@ class JobSnapshot implements EntityInterface, SnapshotInterface
     /**
      * Organization name
      *
-     * @ODM\String
+     * @ODM\Field(type="string")
      * @var string
      */
     protected $organizationName;
@@ -105,7 +105,7 @@ class JobSnapshot implements EntityInterface, SnapshotInterface
      * Name of the parent of the organization.
      * Only set, if organization is a hiring organization
      *
-     * @ODM\String
+     * @ODM\Field(type="string")
      * @var string
      */
     protected $organizationParent;

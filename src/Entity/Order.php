@@ -52,7 +52,7 @@ class Order implements OrderInterface, ImmutableEntityInterface
     /**
      * The order number
      *
-     * @ODM\String
+     * @ODM\Field(type="string")
      * @var string
      */
     protected $number;
@@ -61,7 +61,7 @@ class Order implements OrderInterface, ImmutableEntityInterface
      * Order type.
      * Used for filtering and organization issues.
      *
-     * @ODM\String
+     * @ODM\Field(type="string")
      * @var string
      */
     protected $type = self::TYPE_GENERAL;
@@ -93,7 +93,7 @@ class Order implements OrderInterface, ImmutableEntityInterface
     /**
      * Currency (ISO 4217)
      *
-     * @ODM\String
+     * @ODM\Field(type="string")
      * @var string
      */
     protected $currency;
@@ -101,7 +101,7 @@ class Order implements OrderInterface, ImmutableEntityInterface
     /**
      * Currency symbol.
      *
-     * @ODM\String
+     * @ODM\Field(type="string")
      * @var string
      */
     protected $currencySymbol;
@@ -138,7 +138,7 @@ class Order implements OrderInterface, ImmutableEntityInterface
      * if this entity is not yet persisted, prices are
      * calculated each time on access.
      *
-     * @ODM\Hash
+     * @ODM\Field(type="hash")
      * @var array
      */
     protected $prices;
