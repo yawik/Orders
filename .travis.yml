@@ -53,8 +53,10 @@ script:
 
 after_script:
   - 'if [[ $COVERAGE = yes ]]; then
-        cd `dirname $TRAVIS_BUILD_DIR`/yawik;
+        cd `dirname $TRAVIS_BUILD_DIR`/yawik/module/Orders;
+        mkdir -p test/build;
+        mv ../../test/build/logs test/build/logs;
         travis_retry php-coveralls -vvv;
         wget https://scrutinizer-ci.com/ocular.phar;
-        travis_retry php ocular.phar code-coverage:upload --format=php-clover test/build/logs/clover.serialized;
+        travis_retry php ocular.phar code-coverage:upload --format=php-clover ../../test/build/logs/clover.serialized;
     fi'
