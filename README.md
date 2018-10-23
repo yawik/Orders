@@ -37,10 +37,13 @@ Documentation
 http://yawik.readthedocs.io/en/latest/modules/orders/index.html
 
 
-Example
+Development
 -------
-
-https://yawik.org
+1.  Clone project
+```sh
+$ git clone git@github.com:yawik/Orders.git /path/to/orders 
+```
+2. 
 
 
 Licence

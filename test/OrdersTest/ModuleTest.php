@@ -14,7 +14,7 @@ use Orders\Module;
 
 /**
  * Tests for \Orders\Module
- * 
+ *
  * @covers \Orders\Module
  * @author Carsten Bleek <bleek@cross-solution.de>
  * @group Orders
@@ -53,7 +53,6 @@ class ModuleTest extends \PHPUnit_Framework_TestCase
      */
     public function testImplementsInterfaces()
     {
-        $this->assertInstanceOf('\Zend\ModuleManager\Feature\AutoloaderProviderInterface', $this->target, 'Module class does not implement AutoloaderProviderInterface');
         $this->assertInstanceOf('\Zend\ModuleManager\Feature\ConfigProviderInterface', $this->target, 'Module class does not implement ConfigProviderInterface');
     }
 
@@ -96,7 +95,6 @@ class ModuleTest extends \PHPUnit_Framework_TestCase
      */
     public function testOnBootstrapListener()
     {
-      //   @todo
+        //   @todo
     }
-
 }
