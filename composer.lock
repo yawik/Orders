@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d17aefceeb9e2ea792c0494bff6038aa",
+    "content-hash": "bc830236bce2ad3a32df0559191a0bdf",
     "packages": [
         {
             "name": "alcaeus/mongo-php-adapter",
@@ -7965,12 +7965,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/yawik/behat.git",
-                "reference": "b541accec8a28a49da1f8259acaff7a4f917309f"
+                "reference": "54b0b6e52bc90396fc09a7528fc808ca296bc1e9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yawik/behat/zipball/b541accec8a28a49da1f8259acaff7a4f917309f",
-                "reference": "b541accec8a28a49da1f8259acaff7a4f917309f",
+                "url": "https://api.github.com/repos/yawik/behat/zipball/54b0b6e52bc90396fc09a7528fc808ca296bc1e9",
+                "reference": "54b0b6e52bc90396fc09a7528fc808ca296bc1e9",
                 "shasum": ""
             },
             "require": {
@@ -8024,7 +8024,7 @@
                 "yawik",
                 "zf3"
             ],
-            "time": "2018-10-23T04:16:45+00:00"
+            "time": "2018-10-23T07:49:53+00:00"
         }
     ],
     "aliases": [],
