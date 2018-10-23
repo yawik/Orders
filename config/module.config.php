@@ -69,7 +69,7 @@ return [
             'class' => '\Orders\Options\ModuleOptions',
         ],
         'Orders/InvoiceAddressOptions' => [
-	        'class' => \Orders\Options\InvoiceAddressOptions::class
+            'class' => \Orders\Options\InvoiceAddressOptions::class
         ]
     ],
 
@@ -85,8 +85,7 @@ return [
     'view_helper_config' => [
         'headscript' => [
             'lang/orders-list' => [
-                [ \Zend\View\Helper\HeadScript::FILE, 'Orders/js/list.index.js', 'PREPEND' ],
-                '/assets/bootstrap3-dialog/js/bootstrap-dialog.min.js'
+                [ \Zend\View\Helper\HeadScript::FILE, 'modules/Orders/js/list.index.js', 'PREPEND' ],
             ],
         ],
     ],
@@ -94,4 +93,3 @@ return [
         'library' => [ __DIR__ . "/../library/autoloader_clsassmap.php"]
     ]
 ];
-  
