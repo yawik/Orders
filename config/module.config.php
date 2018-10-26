@@ -62,6 +62,10 @@ return [
         'Core/AdminController/Events' => [ 'listeners' => [
             'Orders/Listener/AdminWidgetProvider' => \Core\Controller\AdminControllerEvent::EVENT_DASHBOARD,
         ]],
+
+        'Core/EntityEraser/Dependencies/Events' => [ 'listeners' => [
+            \Orders\Listener\CheckDependencyListener::class => ['*', true ],
+        ]],
     ],
 
     'options' => [
