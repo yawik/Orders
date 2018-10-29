@@ -6,7 +6,7 @@
   },
   "private": false,
   "devDependencies": {
-    "yawik-core": "./test/sandbox/public/modules/Core",
+    "yawik-core": "test/sandbox/public/modules/Core",
     "grunt": "^1.0.3",
     "grunt-contrib-concat": "^1.0.1",
     "grunt-contrib-copy": "^1.0.0",

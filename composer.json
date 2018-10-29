@@ -46,7 +46,7 @@
     },
     "scripts": {
         "auto-scripts": [
-            "./vendor/bin/yawik assets:install --relative",
+            "./vendor/bin/yawik assets:install --relative test/sandbox/public",
             "npm install"
         ],
         "post-install-cmd": [
