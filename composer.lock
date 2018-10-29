@@ -8023,12 +8023,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/yawik/behat.git",
-                "reference": "a888e623f248002951398130ec28c1b575324c23"
+                "reference": "c7a9639ef36e850b41db55d48e54957976352a78"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yawik/behat/zipball/a888e623f248002951398130ec28c1b575324c23",
-                "reference": "a888e623f248002951398130ec28c1b575324c23",
+                "url": "https://api.github.com/repos/yawik/behat/zipball/c7a9639ef36e850b41db55d48e54957976352a78",
+                "reference": "c7a9639ef36e850b41db55d48e54957976352a78",
                 "shasum": ""
             },
             "require": {
@@ -8082,7 +8082,7 @@
                 "yawik",
                 "zf3"
             ],
-            "time": "2018-10-24T13:12:35+00:00"
+            "time": "2018-10-29T17:07:10+00:00"
         }
     ],
     "aliases": [],

@@ -1,15 +1,18 @@
 <?php
+
+chdir(__DIR__.'/../sandbox');
+
 return [
-    'modules' => \Core\Bootstrap::generateModuleConfiguration([
+    'modules' => \Core\Yawik::generateModuleConfiguration([
         'Core',
         'Cv',
         'Auth',
         'Jobs',
         'Applications',
-        'Settings',
+        'Orders',
         'Organizations',
         'Geo',
-        'Orders',
+        'Settings',
     ]),
     'module_listener_options' => [
         'module_paths' => [
