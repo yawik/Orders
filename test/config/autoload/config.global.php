@@ -16,17 +16,10 @@ return [
         'configuration' => [
             'odm_default' => [
                 'default_db'    => 'YAWIK_TEST',
-                'proxy_dir'     => __DIR__.'/../../cache/DoctrineMongoODMModule/Proxy',
-                'hydrator_dir'  => __DIR__.'/../../cache/DoctrineMongoODMModule/Hydrator',
             ]
         ],
     ],
-    'core_options' => [
-
-    ],
-    'view_helper_config' => [
-        'asset' => [
-            'resource_map' => json_decode(file_get_contents($manifestFile), true),
-        ]
+    "core_options" => [
+        'system_message_email' => "dev@yawik.dev",
     ]
 ];
