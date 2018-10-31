@@ -50,6 +50,7 @@ before_script:
       sleep 3;
     fi'
   - mkdir -vp build/behat
+  - chmod 777 build/behat
 
 script:
   - 'if [[ $COVERAGE = yes ]]; then
