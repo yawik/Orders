@@ -9,10 +9,10 @@ return [
         'Auth',
         'Jobs',
         'Applications',
-        'Orders',
         'Organizations',
         'Geo',
         'Settings',
+        'Orders',
     ]),
     'module_listener_options' => [
         'module_paths' => [
