@@ -6,8 +6,8 @@ command line.
 
 Build status:
 
-[![Build Status](https://api.travis-ci.org/yawik/Orders.svg)](https://travis-ci.org/yawik/Orders)
-[![Coverage Status](https://coveralls.io/repos/github/yawik/Orders/badge.svg?branch=develop)](https://coveralls.io/github/yawik/Orders?branch=develop)
+[![Build Status](https://travis-ci.org/yawik/Orders.svg?branch=master)](https://travis-ci.org/yawik/Orders)
+[![Coverage Status](https://coveralls.io/repos/github/yawik/Orders/badge.svg?branch=master)](https://coveralls.io/github/yawik/Orders?branch=master)
 
 Requirements
 ------------
