@@ -39,7 +39,9 @@ install:
   # install php packages required for running YAWIK phpunit tests
   - pecl install -f ${PECLMONGO}
   - phpenv config-add .travis/phpenv.ini
-  - composer install
+
+  # @TODO: change --prefer-source to --prefer-dist when CoreTestUtils become separated repository
+  - composer install --prefer-source
 
 before_script:
   # behat preparation
