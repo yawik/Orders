@@ -1,7 +1,11 @@
 <?php //description: Renders the list of orders ?>
-<?php $this->headTitle($this->translate('Orders'));
-      $this->headScript()->appendFile($this->basepath('/Core/js/core.pagination-container.js'))
-                         ->captureStart() ?>
+<?php
+$this->headTitle($this->translate('Orders'));
+$this->headScript()
+    ->appendFile($this->basepath('dist/js/bootstrap-dialog.js'))
+    ->appendFile($this->basepath('modules/Core/js/core.pagination-container.js'))
+    ->captureStart()
+?>
 (function($) {
     console.debug($.fn.orderDetailModal);
     $.fn.orderDetailModal.i18n = {
@@ -10,6 +14,7 @@
         'button'  : '<?php echo $this->translate('Close') ?>'
     };
 })(jQuery);
+
 <?php $this->headscript()->captureEnd();
 
 

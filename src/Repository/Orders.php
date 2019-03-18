@@ -16,9 +16,9 @@ use Orders\Entity\OrderNumberCounter;
 
 /**
  * ${CARET}
- * 
+ *
  * @author Mathias Gelhausen <gelhausen@cross-solution.de>
- * @todo write test 
+ * @todo write test
  */
 class Orders extends AbstractRepository
 {
@@ -29,7 +29,7 @@ class Orders extends AbstractRepository
         return $this->create($data);
     }
 
-    public function create(array $data=[], $counterName = null, $counterFormat = null)
+    public function create(array $data=null, $persist=false, $counterName = null, $counterFormat = null)
     {
         if (isset($data['counter'])) {
             $counterName = $data['counter'];

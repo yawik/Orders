@@ -1,2 +1,5 @@
 *~
-test/build
+phpunit.xml
+vendor
+node_modules
+composer.lock

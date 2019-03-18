@@ -33,7 +33,7 @@ class InvoiceAddressDraft implements EntityInterface, IdentifiableEntityInterfac
 
     /**
      *
-     * @ODM\String
+     * @ODM\Field(type="string")
      * @ODM\Index
      * @var string
      */

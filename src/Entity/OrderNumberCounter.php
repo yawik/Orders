@@ -33,7 +33,7 @@ class OrderNumberCounter implements EntityInterface, IdentifiableEntityInterface
     /**
      * The name of this counter. used as Prefix for the number.
      *
-     * @ODM\String
+     * @ODM\Field(type="string")
      * @var string
      */
     protected $name;

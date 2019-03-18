@@ -22,7 +22,7 @@ class InvoiceAddressSettings extends Container
     /**
      * Form of address.
      *
-     * @ODM\String
+     * @ODM\Field(type="string")
      * @var string
      */
     protected $gender;
@@ -30,7 +30,7 @@ class InvoiceAddressSettings extends Container
     /**
      * Full name
      *
-     * @ODM\String
+     * @ODM\Field(type="string")
      * @var string
      */
     protected $name;
@@ -38,7 +38,7 @@ class InvoiceAddressSettings extends Container
     /**
      * Company name.
      *
-     * @ODM\String
+     * @ODM\Field(type="string")
      * @var string
      */
     protected $company;
@@ -46,7 +46,7 @@ class InvoiceAddressSettings extends Container
     /**
      * Street name.
      *
-     * @ODM\String
+     * @ODM\Field(type="string")
      * @var string
      */
     protected $street;
@@ -54,7 +54,7 @@ class InvoiceAddressSettings extends Container
     /**
      * house number.
      *
-     * @ODM\String
+     * @ODM\Field(type="string")
      * @var string
      */
     protected $houseNumber;
@@ -62,7 +62,7 @@ class InvoiceAddressSettings extends Container
     /**
      * Zip code.
      *
-     * @ODM\String
+     * @ODM\Field(type="string")
      * @var string
      */
     protected $zipCode;
@@ -70,7 +70,7 @@ class InvoiceAddressSettings extends Container
     /**
      * City name.
      *
-     * @ODM\String
+     * @ODM\Field(type="string")
      * @var string
      */
     protected $city;
@@ -78,7 +78,7 @@ class InvoiceAddressSettings extends Container
     /**
      * Region.
      *
-     * @ODM\String
+     * @ODM\Field(type="string")
      * @var string
      */
     protected $region;
@@ -86,7 +86,7 @@ class InvoiceAddressSettings extends Container
     /**
      * Country.
      *
-     * @ODM\String
+     * @ODM\Field(type="string")
      * @var string
      */
     protected $country;
@@ -94,7 +94,7 @@ class InvoiceAddressSettings extends Container
     /**
      * Value added tax identification number.
      *
-     * @ODM\String
+     * @ODM\Field(type="string")
      * @var string
      */
     protected $vatId;
@@ -102,7 +102,7 @@ class InvoiceAddressSettings extends Container
     /**
      * Email address.
      *
-     * @ODM\String
+     * @ODM\Field(type="string")
      * @var string
      */
     protected $email;

@@ -24,7 +24,7 @@ class ModuleOptions extends AbstractOptions
     /**
      * Currency (ISO 4217)
      *
-     * @ODM\String
+     * @ODM\Field(type="string")
      * @var string
      */
     protected $currency = 'EUR';
@@ -32,7 +32,7 @@ class ModuleOptions extends AbstractOptions
     /**
      * Currency symbol.
      *
-     * @ODM\String
+     * @ODM\Field(type="string")
      * @var string
      */
     protected $currencySymbol = '€';

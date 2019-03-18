@@ -27,7 +27,7 @@ class InvoiceAddress implements InvoiceAddressInterface
     /**
      * Form of address.
      *
-     * @ODM\String
+     * @ODM\Field(type="string")
      * @var string
      */
     protected $gender;
@@ -35,7 +35,7 @@ class InvoiceAddress implements InvoiceAddressInterface
     /**
      * Full name
      *
-     * @ODM\String
+     * @ODM\Field(type="string")
      * @var string
      */
     protected $name;
@@ -43,7 +43,7 @@ class InvoiceAddress implements InvoiceAddressInterface
     /**
      * Company name.
      *
-     * @ODM\String
+     * @ODM\Field(type="string")
      * @var string
      */
     protected $company;
@@ -51,7 +51,7 @@ class InvoiceAddress implements InvoiceAddressInterface
     /**
      * Street name.
      *
-     * @ODM\String
+     * @ODM\Field(type="string")
      * @var string
      */
     protected $street;
@@ -59,7 +59,7 @@ class InvoiceAddress implements InvoiceAddressInterface
     /**
      * houseNumber.
      *
-     * @ODM\String
+     * @ODM\Field(type="string")
      * @var string
      */
     protected $houseNumber;
@@ -67,7 +67,7 @@ class InvoiceAddress implements InvoiceAddressInterface
     /**
      * Zip code.
      *
-     * @ODM\String
+     * @ODM\Field(type="string")
      * @var string
      */
     protected $zipCode;
@@ -75,7 +75,7 @@ class InvoiceAddress implements InvoiceAddressInterface
     /**
      * City name.
      *
-     * @ODM\String
+     * @ODM\Field(type="string")
      * @var string
      */
     protected $city;
@@ -83,7 +83,7 @@ class InvoiceAddress implements InvoiceAddressInterface
     /**
      * Region.
      *
-     * @ODM\String
+     * @ODM\Field(type="string")
      * @var string
      */
     protected $region;
@@ -91,7 +91,7 @@ class InvoiceAddress implements InvoiceAddressInterface
     /**
      * Country.
      *
-     * @ODM\String
+     * @ODM\Field(type="string")
      * @var string
      */
     protected $country;
@@ -99,7 +99,7 @@ class InvoiceAddress implements InvoiceAddressInterface
     /**
      * Value added tax identification number.
      *
-     * @ODM\String
+     * @ODM\Field(type="string")
      * @var string
      */
     protected $vatId;
@@ -107,7 +107,7 @@ class InvoiceAddress implements InvoiceAddressInterface
     /**
      * Email address.
      *
-     * @ODM\String
+     * @ODM\Field(type="string")
      * @var string
      */
     protected $email;
