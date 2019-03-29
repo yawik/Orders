@@ -25,7 +25,7 @@ use Orders\Entity\Snapshot\SnapshotInterface;
  * Order entity
  *
  * @ODM\Document(collection="orders", repositoryClass="Orders\Repository\Orders")
- * @ODM\HasLifeCycleCallbacks
+ * @ODM\HasLifecycleCallbacks
  * @ODM\Indexes({
  *      @ODM\Index(keys={
  *                  "number"="text",
