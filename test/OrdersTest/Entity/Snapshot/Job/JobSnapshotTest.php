@@ -10,9 +10,9 @@
 /** */
 namespace OrdersTest\Entity\Snapshot\Job;
 
-use CoreTestUtils\TestCase\TestInheritanceTrait;
-use CoreTestUtils\TestCase\TestUsesTraitsTrait;
-use CoreTestUtils\TestCase\TestSetterGetterTrait;
+use Cross\TestUtils\TestCase\TestInheritanceTrait;
+use Cross\TestUtils\TestCase\TestUsesTraitsTrait;
+use Cross\TestUtils\TestCase\TestSetterAndGetterTrait;
 use Orders\Entity\Snapshot\Job\JobSnapshot;
 
 /**
@@ -25,9 +25,9 @@ use Orders\Entity\Snapshot\Job\JobSnapshot;
  * @group  Orders
  * @group  Orders.Entity
  */
-class JobSnapshotTest extends \PHPUnit_Framework_TestCase
+class JobSnapshotTest extends \PHPUnit\Framework\TestCase
 {
-    use TestInheritanceTrait, TestUsesTraitsTrait, TestSetterGetterTrait;
+    use TestInheritanceTrait, TestUsesTraitsTrait, TestSetterAndGetterTrait;
 
     /**
      * The "Class under Test"

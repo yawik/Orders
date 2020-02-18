@@ -11,8 +11,8 @@
 namespace OrdersTest\Entity;
 
 use Core\Entity\EntityInterface;
-use CoreTestUtils\TestCase\TestInheritanceTrait;
-use CoreTestUtils\TestCase\TestSetterGetterTrait;
+use Cross\TestUtils\TestCase\TestInheritanceTrait;
+use Cross\TestUtils\TestCase\TestSetterAndGetterTrait;
 use Orders\Entity\InvoiceAddressDraft;
 
 /**
@@ -25,9 +25,9 @@ use Orders\Entity\InvoiceAddressDraft;
  * @group  Orders
  * @group  Orders.Entity
  */
-class InvoiceAddressDraftTest extends \PHPUnit_Framework_TestCase
+class InvoiceAddressDraftTest extends \PHPUnit\Framework\TestCase
 {
-    use TestInheritanceTrait, TestSetterGetterTrait;
+    use TestInheritanceTrait, TestSetterAndGetterTrait;
 
     /**
      * The "Class under Test"

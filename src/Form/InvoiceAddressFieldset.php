@@ -13,7 +13,7 @@ namespace Orders\Form;
 use Core\Entity\Hydrator\EntityHydrator;
 use Core\Form\CustomizableFieldsetInterface;
 use Core\Form\CustomizableFieldsetTrait;
-use Zend\Form\Fieldset;
+use Laminas\Form\Fieldset;
 
 /**
  * ${CARET}

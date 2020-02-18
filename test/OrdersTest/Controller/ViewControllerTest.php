@@ -6,27 +6,27 @@
  * @license MIT
  * @copyright  2013 - 2017 Cross Solution <http://cross-solution.de>
  */
-  
+
 /** */
 namespace OrdersTest\Controller;
 
-use CoreTestUtils\TestCase\TestInheritanceTrait;
+use Cross\TestUtils\TestCase\TestInheritanceTrait;
 use Orders\Controller\ViewController;
 use Orders\Entity\Order;
 use Orders\Repository\Orders;
-use Zend\Mvc\Controller\AbstractActionController;
-use Zend\Mvc\Controller\Plugin\Params;
-use Zend\Mvc\Controller\PluginManager;
-use Zend\ServiceManager\ServiceManager;
+use Laminas\Mvc\Controller\AbstractActionController;
+use Laminas\Mvc\Controller\Plugin\Params;
+use Laminas\Mvc\Controller\PluginManager;
+use Laminas\ServiceManager\ServiceManager;
 
 /**
  * Tests for \Orders\Controller\ViewController
- * 
+ *
  * @covers \Orders\Controller\ViewController
  * @author Mathias Gelhausen <gelhausen@cross-solution.de>
- *  
+ *
  */
-class ViewControllerTest extends \PHPUnit_Framework_TestCase
+class ViewControllerTest extends \PHPUnit\Framework\TestCase
 {
     use TestInheritanceTrait;
 

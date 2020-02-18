@@ -10,8 +10,8 @@
 /** */
 namespace OrdersTest\Entity;
 
-use CoreTestUtils\TestCase\TestInheritanceTrait;
-use CoreTestUtils\TestCase\TestSetterGetterTrait;
+use Cross\TestUtils\TestCase\TestInheritanceTrait;
+use Cross\TestUtils\TestCase\TestSetterAndGetterTrait;
 use Orders\Entity\Order;
 use Orders\Entity\OrderInterface;
 
@@ -25,9 +25,9 @@ use Orders\Entity\OrderInterface;
  * @group  Orders
  * @group  Orders.Entity
  */
-class OrderTest extends \PHPUnit_Framework_TestCase
+class OrderTest extends \PHPUnit\Framework\TestCase
 {
-    use TestInheritanceTrait, TestSetterGetterTrait;
+    use TestInheritanceTrait, TestSetterAndGetterTrait;
 
     /**
      * The "Class under Test"

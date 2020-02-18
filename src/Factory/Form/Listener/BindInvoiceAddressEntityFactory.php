@@ -12,8 +12,8 @@ namespace Orders\Factory\Form\Listener;
 
 use Interop\Container\ContainerInterface;
 use Orders\Form\Listener\BindInvoiceAddressEntity;
-use Zend\ServiceManager\FactoryInterface;
-use Zend\ServiceManager\ServiceLocatorInterface;
+use Laminas\ServiceManager\FactoryInterface;
+use Laminas\ServiceManager\ServiceLocatorInterface;
 
 /**
  * ${CARET}

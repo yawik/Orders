@@ -6,7 +6,7 @@
  * @license MIT
  * @copyright  2013 - 2016 Cross Solution <http://cross-solution.de>
  */
-  
+
 /** */
 namespace OrdersTest;
 
@@ -19,7 +19,7 @@ use Orders\Module;
  * @author Carsten Bleek <bleek@cross-solution.de>
  * @group Orders
  */
-class ModuleTest extends \PHPUnit_Framework_TestCase
+class ModuleTest extends \PHPUnit\Framework\TestCase
 {
 
     /**
@@ -43,7 +43,7 @@ class ModuleTest extends \PHPUnit_Framework_TestCase
      */
     protected $target;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->moduleDir = realpath(__DIR__ . '/../../');
         $this->target    = new Module();
@@ -53,7 +53,7 @@ class ModuleTest extends \PHPUnit_Framework_TestCase
      */
     public function testImplementsInterfaces()
     {
-        $this->assertInstanceOf('\Zend\ModuleManager\Feature\ConfigProviderInterface', $this->target, 'Module class does not implement ConfigProviderInterface');
+        $this->assertInstanceOf('\Laminas\ModuleManager\Feature\ConfigProviderInterface', $this->target, 'Module class does not implement ConfigProviderInterface');
     }
 
     public function testProvidesCorrectConfigArray()
@@ -74,17 +74,17 @@ class ModuleTest extends \PHPUnit_Framework_TestCase
         // @todo
 //        $config =
 //            [
-//                'Zend\Loader\ClassMapAutoloader' => [
+//                'Laminas\Loader\ClassMapAutoloader' => [
 //                    __DIR__ . '/src/autoload_classmap.php'
 //                ],
-//                'Zend\Loader\StandardAutoloader' => [
+//                'Laminas\Loader\StandardAutoloader' => [
 //                    'namespaces' => [
 //                        __NAMESPACE__ => __DIR__ . '/src',
 //                    ],
 //                ],
 //            ];
 //
-//         $config['Zend\Loader\StandardAutoloader']['namespaces'][__NAMESPACE__ . 'Test']
+//         $config['Laminas\Loader\StandardAutoloader']['namespaces'][__NAMESPACE__ . 'Test']
 //                    = __DIR__ . '/test/' . __NAMESPACE__ . 'Test';
 //
 //        $this->assertEquals($config, $this->target->getAutoloaderConfig());

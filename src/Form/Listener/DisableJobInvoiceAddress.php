@@ -13,9 +13,9 @@ namespace Orders\Form\Listener;
 use Core\Entity\Hydrator\EntityHydrator;
 use Core\Form\Event\FormEvent;
 use Core\Form\SummaryFormInterface;
-use Zend\EventManager\EventManagerInterface;
-use Zend\EventManager\ListenerAggregateInterface;
-use Zend\Session\Container;
+use Laminas\EventManager\EventManagerInterface;
+use Laminas\EventManager\ListenerAggregateInterface;
+use Laminas\Session\Container;
 
 /**
  * ${CARET}

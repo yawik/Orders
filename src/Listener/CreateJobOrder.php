@@ -18,7 +18,7 @@ use Orders\Entity\OrderInterface;
 use Orders\Entity\Product;
 use Orders\Entity\Snapshot\Job\Builder;
 use Orders\Entity\InvoiceAddress;
-use Zend\Session\Container;
+use Laminas\Session\Container;
 
 /**
  * ${CARET}
@@ -44,7 +44,7 @@ class CreateJobOrder
     /**
      *
      *
-     * @var \Zend\Filter\FilterInterface
+     * @var \Laminas\Filter\FilterInterface
      */
     protected $priceFilter;
 

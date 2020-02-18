@@ -12,7 +12,7 @@ namespace Orders\Form;
 
 use Core\Form\Event\FormEvent;
 use Core\Form\SummaryForm;
-use Zend\EventManager\EventManagerInterface;
+use Laminas\EventManager\EventManagerInterface;
 
 /**
  * ${CARET}
@@ -41,7 +41,7 @@ class InvoiceAddress extends SummaryForm
     public function getEventManager()
     {
         if (!$this->events) {
-            $this->setEventManager(new \Zend\EventManager\EventManager());
+            $this->setEventManager(new \Laminas\EventManager\EventManager());
         }
 
         return $this->events;
