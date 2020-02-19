@@ -51,38 +51,37 @@ class JobSnapshotTest extends \PHPUnit\Framework\TestCase
      *
      * @var array
      */
-    private $traits = [ 'Core\Entity\EntityTrait' ];
+    private $usesTraits = [ 'Core\Entity\EntityTrait' ];
 
     /**
      * @see TestSetterGetterTrait
      *
      * @var array
      */
-    private $properties = [
+    private $setterAndGetter = [
         [ 'title', 'the job title' ],
         [ 'applyId', 'my external ID' ],
-        [ 'atsMode','@Core\Entity\Collection\ArrayCollection'],
-        [ 'datePublishStart', '@DateTime'],
-        [ 'job', '@Jobs\Entity\Job'],
-        [ 'job', ['value'=> '@Jobs\Entity\Job',
-                  'getter_method' => 'has*',
-                  'expect'=>true ]],
-        [ 'job', ['ignore_setter' =>true,
-                  'getter_method' => 'has*',
-                  'value'=>false ]],
+        [ 'atsMode', ['value_object' => 'Core\Entity\Collection\ArrayCollection'] ],
+        [ 'datePublishStart', ['value_object' => 'DateTime'] ],
+        [ 'job', ['value_object' => 'Jobs\Entity\Job'] ],
+        [ 'job', [
+            'value_object' => 'Jobs\Entity\Job',
+            'getter' => 'has*',
+            'expect' => true,
+            'assert' => 'equals',
+        ]],
+        [ 'job', [
+            'setter' => false,
+            'getter' => 'has*',
+            'value' => false
+        ]],
         [ 'language', 'de'],
         [ 'link','http://thelink.de'],
-        [ 'locations','@Core\Entity\Collection\ArrayCollection'],
+        [ 'locations', ['value_object' => 'Core\Entity\Collection\ArrayCollection'] ],
         [ 'reference', 'my reference'],
         [ 'uriPublisher', 'http://the.publisher.de'],
         [ 'uriApply', 'http://the.publisher.de'],
         [ 'organizationParent', '1234'],
         [ 'organizationName', '1234 AG'],
-
-
-
-
     ];
-
-
 }

@@ -10,6 +10,7 @@
 /** */
 namespace OrdersTest\Controller;
 
+use Cross\TestUtils\TestCase\SetupTargetTrait;
 use Cross\TestUtils\TestCase\TestInheritanceTrait;
 use Orders\Controller\ViewController;
 use Orders\Entity\Order;
@@ -28,8 +29,11 @@ use Laminas\ServiceManager\ServiceManager;
  */
 class ViewControllerTest extends \PHPUnit\Framework\TestCase
 {
-    use TestInheritanceTrait;
+    use SetupTargetTrait, TestInheritanceTrait;
 
+    /**
+     * @var \PhpUnit\Framework\MockObject\MockObject|\Orders\Repository\Orders
+     */
     private $repository;
     private $params;
 
@@ -39,10 +43,16 @@ class ViewControllerTest extends \PHPUnit\Framework\TestCase
      * @var array|ViewController
      */
     private $target = [
-        ViewController::class,
-        'targetArgs',
-        '@testInheritance' => [ 'as_reflection' => true ],
-        'post' => 'injectPluginManager'
+        'create' => [
+            [
+                'for' => 'testInheritance',
+                'target' => ViewController::class,
+                'reflection' => true
+            ],
+            [
+                'callback' => 'createTarget'
+            ]
+        ],
     ];
 
     private $inheritance = [ AbstractActionController::class ];
@@ -57,11 +67,18 @@ class ViewControllerTest extends \PHPUnit\Framework\TestCase
     }
 
 
-    private function targetArgs()
+    private function createTarget()
     {
-        $this->repository = $this->getMockBuilder(Orders::class)->disableOriginalConstructor()->setMethods(['find'])->getMock();
+        /** @var \Orders\Repository\Orders $repository */
+        $this->repository = $repository = $this->getMockBuilder(Orders::class)->disableOriginalConstructor()->setMethods(['find'])->getMock();
+        $target = new ViewController($repository);
+        $this->params = $this->getMockBuilder(Params::class)->setMethods(['fromQuery'])->disableOriginalConstructor()->getMock();
+        $plugins = new PluginManager(new ServiceManager());
+        $plugins->setService('params', $this->params);
 
-        return [$this->repository];
+        $target->setPluginManager($plugins);
+
+        return $target;
     }
 
     public function testIndexActionThrowsExceptionIfNoIdIsPassed()
@@ -98,10 +115,5 @@ class ViewControllerTest extends \PHPUnit\Framework\TestCase
         $actual = $this->target->indexAction();
 
         $this->assertEquals($expected, $actual);
-    }
-
-    public function testConstructSetsDependencies()
-    {
-        $this->assertAttributeSame($this->repository, 'repository', $this->target);
     }
 }

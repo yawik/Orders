@@ -48,7 +48,7 @@ class InvoiceAddressDraftTest extends \PHPUnit\Framework\TestCase
      *
      * @var array
      */
-    private $properties = [
+    private $setterAndGetter = [
         [ 'jobId', '123' ],
         [ 'invoiceAddress', '@Orders\Entity\InvoiceAddress' ],
     ];

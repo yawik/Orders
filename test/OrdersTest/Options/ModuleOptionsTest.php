@@ -29,7 +29,7 @@ class ModuleOptionsTest extends \PHPUnit\Framework\TestCase
         'class' => ModuleOptions::class
     ];
 
-    public function propertiesProvider()
+    public function setterAndGetterData()
     {
         return [
             ['currency', [

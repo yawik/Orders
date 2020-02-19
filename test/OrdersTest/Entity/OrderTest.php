@@ -10,6 +10,7 @@
 /** */
 namespace OrdersTest\Entity;
 
+use Cross\TestUtils\TestCase\SetupTargetTrait;
 use Cross\TestUtils\TestCase\TestInheritanceTrait;
 use Cross\TestUtils\TestCase\TestSetterAndGetterTrait;
 use Orders\Entity\Order;
@@ -27,7 +28,7 @@ use Orders\Entity\OrderInterface;
  */
 class OrderTest extends \PHPUnit\Framework\TestCase
 {
-    use TestInheritanceTrait, TestSetterAndGetterTrait;
+    use SetupTargetTrait, TestInheritanceTrait, TestSetterAndGetterTrait;
 
     /**
      * The "Class under Test"
@@ -48,15 +49,15 @@ class OrderTest extends \PHPUnit\Framework\TestCase
      *
      * @var array
      */
-    private $properties = [
+    private $setterAndGetter = [
         [ 'number', 'ABCD1234' ],
         [ 'type', 'general' ],
         [ 'currency', 'USD' ],
         [ 'currencySymbol', '€' ],
         [ 'taxRate', 24 ],
-        [ 'invoiceAddress', '@Orders\Entity\InvoiceAddress' ],
-        [ 'entity', '@Orders\Entity\Snapshot\Job\JobSnapshot' ],
-        [ 'products','@Core\Entity\Collection\ArrayCollection'],
+        [ 'invoiceAddress', ['value_object' => 'Orders\Entity\InvoiceAddress'] ],
+        [ 'entity', ['value_object' => 'Orders\Entity\Snapshot\Job\JobSnapshot'] ],
+        [ 'products', ['value_object' => 'Core\Entity\Collection\ArrayCollection'] ],
     ];
 
     /**

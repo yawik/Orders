@@ -49,7 +49,7 @@ class ProductTest extends \PHPUnit\Framework\TestCase
      *
      * @var array
      */
-    private $properties = [
+    private $setterAndGetter = [
         [ 'name', 'Product Name' ],
         [ 'price', 100.59 ],
         [ 'productNumber', '12ABC' ],

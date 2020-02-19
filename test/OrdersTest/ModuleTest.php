@@ -69,31 +69,10 @@ class ModuleTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals($config, $this->target->getConfig());
     }
 
-    public function testProvidesCorrectAutoloaderConfigArray()
-    {
-        // @todo
-//        $config =
-//            [
-//                'Laminas\Loader\ClassMapAutoloader' => [
-//                    __DIR__ . '/src/autoload_classmap.php'
-//                ],
-//                'Laminas\Loader\StandardAutoloader' => [
-//                    'namespaces' => [
-//                        __NAMESPACE__ => __DIR__ . '/src',
-//                    ],
-//                ],
-//            ];
-//
-//         $config['Laminas\Loader\StandardAutoloader']['namespaces'][__NAMESPACE__ . 'Test']
-//                    = __DIR__ . '/test/' . __NAMESPACE__ . 'Test';
-//
-//        $this->assertEquals($config, $this->target->getAutoloaderConfig());
-    }
-
     /**
      * @testdox Attachs language setter listener on bootstrap event
      */
-    public function testOnBootstrapListener()
+    public function xtestOnBootstrapListener()
     {
         //   @todo
     }

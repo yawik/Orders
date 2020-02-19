@@ -49,14 +49,14 @@ class InvoiceAddressTest extends \PHPUnit\Framework\TestCase
      *
      * @var array
      */
-    private $traits = [ 'Core\Entity\EntityTrait' ];
+    private $usesTraits = [ 'Core\Entity\EntityTrait' ];
 
     /**
      * @see TestSetterGetterTrait
      *
      * @var array
      */
-    private $properties = [
+    private $setterAndGetter = [
         [ 'city', 'TestCity' ],
         [ 'company', 'TestCompany' ],
         [ 'country', 'TestCountry' ],

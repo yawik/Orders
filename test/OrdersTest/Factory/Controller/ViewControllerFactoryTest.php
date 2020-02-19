@@ -11,6 +11,7 @@
 namespace OrdersTest\Factory\Controller;
 
 use Cross\TestUtils\TestCase\ContainerDoubleTrait;
+use Cross\TestUtils\TestCase\SetupTargetTrait;
 use Cross\TestUtils\TestCase\TestInheritanceTrait;
 use Orders\Controller\ViewController;
 use Orders\Factory\Controller\ViewControllerFactory;
@@ -26,7 +27,7 @@ use Laminas\ServiceManager\Factory\FactoryInterface;
  */
 class ViewControllerFactoryTest extends \PHPUnit\Framework\TestCase
 {
-    use TestInheritanceTrait, ContainerDoubleTrait;
+    use SetupTargetTrait, TestInheritanceTrait, ContainerDoubleTrait;
 
     /**
      *
@@ -40,8 +41,11 @@ class ViewControllerFactoryTest extends \PHPUnit\Framework\TestCase
     public function testInvokationCreatesViewController()
     {
         $repository = $this->getMockBuilder(Orders::class)->disableOriginalConstructor()->getMock();
-        $repositories = $this->createPluginManagerMock(['Orders' => ['service' => $repository, 'count' => 1]]);
-        $container = $this->createServiceManagerMock(['repositories' => ['service' => $repositories, 'count' => 1]]);
+        $repositories = $this->createContainerDouble(['Orders' => ['service' => $repository, 'count' => 1]]);
+        $container = $this->createContainerDouble(
+            ['repositories' => ['service' => $repositories, 'count' => 1]],
+            ['target' => \Interop\Container\ContainerInterface::class]
+        );
 
         $controller = $this->target->__invoke($container, 'irrelevant');
 
