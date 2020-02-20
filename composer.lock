@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4ca171068d593b60e36d261c5bfcc15b",
+    "content-hash": "5f084757006b5e070ee8aaf0067a86bb",
     "packages": [
         {
             "name": "alcaeus/mongo-php-adapter",
@@ -5781,25 +5781,26 @@
         },
         {
             "name": "yawik/composer-plugin",
-            "version": "v1.0.0",
+            "version": "v2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yawik/composer-plugin.git",
-                "reference": "d3a45d2ab342fc0eb21e1126e8637fb7752464e4"
+                "reference": "473f2e467e8a8138ed67509578cd94ea2378aaee"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yawik/composer-plugin/zipball/d3a45d2ab342fc0eb21e1126e8637fb7752464e4",
-                "reference": "d3a45d2ab342fc0eb21e1126e8637fb7752464e4",
+                "url": "https://api.github.com/repos/yawik/composer-plugin/zipball/473f2e467e8a8138ed67509578cd94ea2378aaee",
+                "reference": "473f2e467e8a8138ed67509578cd94ea2378aaee",
                 "shasum": ""
             },
             "require": {
                 "composer-plugin-api": "^1.1",
+                "laminas/laminas-dependency-plugin": "^1.0",
+                "laminas/laminas-eventmanager": "^3.2",
                 "php": ">=5.6",
                 "psr/log": "^1.0",
                 "symfony/console": "^3.4 | ^4.1",
-                "symfony/finder": "^3.4 | ^4.1",
-                "zendframework/zend-eventmanager": "^3.2"
+                "symfony/finder": "^3.4 | ^4.1"
             },
             "replace": {
                 "yawik/composer-plugin": "self.version"
@@ -5843,7 +5844,7 @@
                 }
             ],
             "description": "The composer plugin for yawik application",
-            "time": "2018-11-24T04:11:48+00:00"
+            "time": "2020-02-20T10:56:56+00:00"
         },
         {
             "name": "yawik/core",
