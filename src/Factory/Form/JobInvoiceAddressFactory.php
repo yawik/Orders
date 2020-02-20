@@ -12,7 +12,7 @@ namespace Orders\Factory\Form;
 
 use Interop\Container\ContainerInterface;
 use Orders\Form\InvoiceAddress;
-use Zend\ServiceManager\Factory\FactoryInterface;
+use Laminas\ServiceManager\Factory\FactoryInterface;
 
 
 

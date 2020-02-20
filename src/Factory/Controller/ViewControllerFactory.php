@@ -12,7 +12,7 @@ namespace Orders\Factory\Controller;
 
 use Orders\Controller\ViewController;
 use Interop\Container\ContainerInterface;
-use Zend\ServiceManager\Factory\FactoryInterface;
+use Laminas\ServiceManager\Factory\FactoryInterface;
 
 /**
  * Factory for \Orders\Controller\ViewController

@@ -12,8 +12,9 @@ namespace OrdersTest\Entity;
 
 use Core\Entity\EntityInterface;
 use Core\Entity\IdentifiableEntityInterface;
-use CoreTestUtils\TestCase\TestInheritanceTrait;
-use CoreTestUtils\TestCase\TestSetterGetterTrait;
+use Cross\TestUtils\TestCase\SetupTargetTrait;
+use Cross\TestUtils\TestCase\TestInheritanceTrait;
+use Cross\TestUtils\TestCase\TestSetterAndGetterTrait;
 use Orders\Entity\OrderNumberCounter;
 
 /**
@@ -26,9 +27,9 @@ use Orders\Entity\OrderNumberCounter;
  * @group  Orders
  * @group  Orders.Entity
  */
-class OrderNumberCounterTest extends \PHPUnit_Framework_TestCase
+class OrderNumberCounterTest extends \PHPUnit\Framework\TestCase
 {
-    use TestInheritanceTrait, TestSetterGetterTrait;
+    use SetupTargetTrait, TestInheritanceTrait, TestSetterAndGetterTrait;
 
     /**
      * The "Class under Test"
@@ -52,7 +53,7 @@ class OrderNumberCounterTest extends \PHPUnit_Framework_TestCase
      *
      * @var array
      */
-    private $properties = [
+    private $setterAndGetter = [
         [ 'name', 'test' ],
         [ 'count', 10 ],
     ];

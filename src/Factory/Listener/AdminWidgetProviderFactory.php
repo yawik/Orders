@@ -12,8 +12,8 @@ namespace Orders\Factory\Listener;
 
 use Interop\Container\ContainerInterface;
 use Orders\Listener\AdminWidgetProvider;
-use Zend\ServiceManager\FactoryInterface;
-use Zend\ServiceManager\ServiceLocatorInterface;
+use Laminas\ServiceManager\FactoryInterface;
+use Laminas\ServiceManager\ServiceLocatorInterface;
 
 /**
  * ${CARET}

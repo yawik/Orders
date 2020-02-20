@@ -89,7 +89,7 @@ return [
     'view_helper_config' => [
         'headscript' => [
             'lang/orders-list' => [
-                [ \Zend\View\Helper\HeadScript::FILE, 'modules/Orders/js/list.index.js', 'PREPEND' ],
+                [ \Laminas\View\Helper\HeadScript::FILE, 'modules/Orders/js/list.index.js', 'PREPEND' ],
             ],
         ],
     ],

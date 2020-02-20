@@ -10,9 +10,9 @@
 /** */
 namespace OrdersTest\Entity;
 
-use CoreTestUtils\TestCase\TestInheritanceTrait;
-use CoreTestUtils\TestCase\TestUsesTraitsTrait;
-use CoreTestUtils\TestCase\TestSetterGetterTrait;
+use Cross\TestUtils\TestCase\TestInheritanceTrait;
+use Cross\TestUtils\TestCase\TestUsesTraitsTrait;
+use Cross\TestUtils\TestCase\TestSetterAndGetterTrait;
 use Orders\Entity\InvoiceAddress;
 
 /**
@@ -26,9 +26,9 @@ use Orders\Entity\InvoiceAddress;
  * @group  Orders
  * @group  Orders.Entity
  */
-class InvoiceAddressTest extends \PHPUnit_Framework_TestCase
+class InvoiceAddressTest extends \PHPUnit\Framework\TestCase
 {
-    use TestInheritanceTrait, TestUsesTraitsTrait, TestSetterGetterTrait;
+    use TestInheritanceTrait, TestUsesTraitsTrait, TestSetterAndGetterTrait;
 
     /**
      * The "Class under Test"
@@ -49,14 +49,14 @@ class InvoiceAddressTest extends \PHPUnit_Framework_TestCase
      *
      * @var array
      */
-    private $traits = [ 'Core\Entity\EntityTrait' ];
+    private $usesTraits = [ 'Core\Entity\EntityTrait' ];
 
     /**
      * @see TestSetterGetterTrait
      *
      * @var array
      */
-    private $properties = [
+    private $setterAndGetter = [
         [ 'city', 'TestCity' ],
         [ 'company', 'TestCompany' ],
         [ 'country', 'TestCountry' ],

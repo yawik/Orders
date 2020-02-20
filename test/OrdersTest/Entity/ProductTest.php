@@ -10,8 +10,8 @@
 /** */
 namespace OrdersTest\Entity;
 
-use CoreTestUtils\TestCase\TestInheritanceTrait;
-use CoreTestUtils\TestCase\TestSetterGetterTrait;
+use Cross\TestUtils\TestCase\TestInheritanceTrait;
+use Cross\TestUtils\TestCase\TestSetterAndGetterTrait;
 use Orders\Entity\Product;
 use Orders\Entity\ProductInterface;
 
@@ -26,9 +26,9 @@ use Orders\Entity\ProductInterface;
  * @group  Orders
  * @group  Orders.Entity
  */
-class ProductTest extends \PHPUnit_Framework_TestCase
+class ProductTest extends \PHPUnit\Framework\TestCase
 {
-    use TestInheritanceTrait, TestSetterGetterTrait;
+    use TestInheritanceTrait, TestSetterAndGetterTrait;
 
     /**
      * The "Class under Test"
@@ -49,7 +49,7 @@ class ProductTest extends \PHPUnit_Framework_TestCase
      *
      * @var array
      */
-    private $properties = [
+    private $setterAndGetter = [
         [ 'name', 'Product Name' ],
         [ 'price', 100.59 ],
         [ 'productNumber', '12ABC' ],

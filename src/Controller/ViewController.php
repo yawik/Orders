@@ -11,7 +11,7 @@
 namespace Orders\Controller;
 
 use Orders\Repository\Orders;
-use Zend\Mvc\Controller\AbstractActionController;
+use Laminas\Mvc\Controller\AbstractActionController;
 
 /**
  * ${CARET}

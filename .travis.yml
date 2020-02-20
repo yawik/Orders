@@ -1,11 +1,11 @@
 language: php
 
-addons:
-  apt:
-    sources:
-      - google-chrome
-    packages:
-      - google-chrome-stable
+#addons:
+#  apt:
+#    sources:
+#      - google-chrome
+#    packages:
+#      - google-chrome-stable
 
 cache:
     directories:
@@ -22,7 +22,6 @@ matrix:
   - php: 7.2
     env: COVERAGE=yes
   include:
-    - php: 7.1
     - php: 7.2
     - php: 7.3
     - php: 7.2

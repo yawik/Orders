@@ -12,7 +12,7 @@ namespace Orders\Controller;
 
 use Core\Factory\ContainerAwareInterface;
 use Interop\Container\ContainerInterface;
-use Zend\Mvc\Controller\AbstractActionController;
+use Laminas\Mvc\Controller\AbstractActionController;
 
 /**
  * ${CARET}

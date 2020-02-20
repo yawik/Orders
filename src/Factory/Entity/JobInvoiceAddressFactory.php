@@ -14,8 +14,8 @@ use Core\Entity\Hydrator\EntityHydrator;
 use Interop\Container\ContainerInterface;
 use Orders\Entity\InvoiceAddress;
 use Settings\Entity\Hydrator\SettingsEntityHydrator;
-use Zend\ServiceManager\FactoryInterface;
-use Zend\ServiceManager\ServiceLocatorInterface;
+use Laminas\ServiceManager\FactoryInterface;
+use Laminas\ServiceManager\ServiceLocatorInterface;
 
 /**
  * ${CARET}

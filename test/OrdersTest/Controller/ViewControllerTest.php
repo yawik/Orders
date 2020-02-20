@@ -6,30 +6,34 @@
  * @license MIT
  * @copyright  2013 - 2017 Cross Solution <http://cross-solution.de>
  */
-  
+
 /** */
 namespace OrdersTest\Controller;
 
-use CoreTestUtils\TestCase\TestInheritanceTrait;
+use Cross\TestUtils\TestCase\SetupTargetTrait;
+use Cross\TestUtils\TestCase\TestInheritanceTrait;
 use Orders\Controller\ViewController;
 use Orders\Entity\Order;
 use Orders\Repository\Orders;
-use Zend\Mvc\Controller\AbstractActionController;
-use Zend\Mvc\Controller\Plugin\Params;
-use Zend\Mvc\Controller\PluginManager;
-use Zend\ServiceManager\ServiceManager;
+use Laminas\Mvc\Controller\AbstractActionController;
+use Laminas\Mvc\Controller\Plugin\Params;
+use Laminas\Mvc\Controller\PluginManager;
+use Laminas\ServiceManager\ServiceManager;
 
 /**
  * Tests for \Orders\Controller\ViewController
- * 
+ *
  * @covers \Orders\Controller\ViewController
  * @author Mathias Gelhausen <gelhausen@cross-solution.de>
- *  
+ *
  */
-class ViewControllerTest extends \PHPUnit_Framework_TestCase
+class ViewControllerTest extends \PHPUnit\Framework\TestCase
 {
-    use TestInheritanceTrait;
+    use SetupTargetTrait, TestInheritanceTrait;
 
+    /**
+     * @var \PhpUnit\Framework\MockObject\MockObject|\Orders\Repository\Orders
+     */
     private $repository;
     private $params;
 
@@ -39,10 +43,16 @@ class ViewControllerTest extends \PHPUnit_Framework_TestCase
      * @var array|ViewController
      */
     private $target = [
-        ViewController::class,
-        'targetArgs',
-        '@testInheritance' => [ 'as_reflection' => true ],
-        'post' => 'injectPluginManager'
+        'create' => [
+            [
+                'for' => 'testInheritance',
+                'target' => ViewController::class,
+                'reflection' => true
+            ],
+            [
+                'callback' => 'createTarget'
+            ]
+        ],
     ];
 
     private $inheritance = [ AbstractActionController::class ];
@@ -57,11 +67,18 @@ class ViewControllerTest extends \PHPUnit_Framework_TestCase
     }
 
 
-    private function targetArgs()
+    private function createTarget()
     {
-        $this->repository = $this->getMockBuilder(Orders::class)->disableOriginalConstructor()->setMethods(['find'])->getMock();
+        /** @var \Orders\Repository\Orders $repository */
+        $this->repository = $repository = $this->getMockBuilder(Orders::class)->disableOriginalConstructor()->setMethods(['find'])->getMock();
+        $target = new ViewController($repository);
+        $this->params = $this->getMockBuilder(Params::class)->setMethods(['fromQuery'])->disableOriginalConstructor()->getMock();
+        $plugins = new PluginManager(new ServiceManager());
+        $plugins->setService('params', $this->params);
 
-        return [$this->repository];
+        $target->setPluginManager($plugins);
+
+        return $target;
     }
 
     public function testIndexActionThrowsExceptionIfNoIdIsPassed()
@@ -98,10 +115,5 @@ class ViewControllerTest extends \PHPUnit_Framework_TestCase
         $actual = $this->target->indexAction();
 
         $this->assertEquals($expected, $actual);
-    }
-
-    public function testConstructSetsDependencies()
-    {
-        $this->assertAttributeSame($this->repository, 'repository', $this->target);
     }
 }

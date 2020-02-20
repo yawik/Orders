@@ -9,8 +9,8 @@
 
 namespace Orders\Options;
 
-use CoreTestUtils\TestCase\TestSetterGetterTrait;
-use CoreTestUtils\TestCase\SetupTargetTrait;
+use Cross\TestUtils\TestCase\TestSetterAndGetterTrait;
+use Cross\TestUtils\TestCase\SetupTargetTrait;
 use Orders\Options\ModuleOptions;
 
 /**
@@ -21,15 +21,15 @@ use Orders\Options\ModuleOptions;
  * @covers  Orders\Options\ModuleOptions
  * @package Orders\Options
  */
-class ModuleOptionsTest extends \PHPUnit_Framework_TestCase
+class ModuleOptionsTest extends \PHPUnit\Framework\TestCase
 {
-    use TestSetterGetterTrait, SetupTargetTrait;
+    use TestSetterAndGetterTrait, SetupTargetTrait;
 
     protected $target = [
         'class' => ModuleOptions::class
     ];
 
-    public function propertiesProvider()
+    public function setterAndGetterData()
     {
         return [
             ['currency', [

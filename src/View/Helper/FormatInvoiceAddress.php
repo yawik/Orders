@@ -11,7 +11,7 @@
 namespace Orders\View\Helper;
 
 use Orders\Entity\InvoiceAddressInterface;
-use Zend\View\Helper\AbstractHelper;
+use Laminas\View\Helper\AbstractHelper;
 
 /**
  * ${CARET}

@@ -6,27 +6,28 @@
  * @license MIT
  * @copyright  2013 - 2017 Cross Solution <http://cross-solution.de>
  */
-  
+
 /** */
 namespace OrdersTest\Factory\Controller;
 
-use CoreTestUtils\TestCase\ServiceManagerMockTrait;
-use CoreTestUtils\TestCase\TestInheritanceTrait;
+use Cross\TestUtils\TestCase\ContainerDoubleTrait;
+use Cross\TestUtils\TestCase\SetupTargetTrait;
+use Cross\TestUtils\TestCase\TestInheritanceTrait;
 use Orders\Controller\ViewController;
 use Orders\Factory\Controller\ViewControllerFactory;
 use Orders\Repository\Orders;
-use Zend\ServiceManager\Factory\FactoryInterface;
+use Laminas\ServiceManager\Factory\FactoryInterface;
 
 /**
  * Tests for \Orders\Factory\Controller\ViewControllerFactory
- * 
+ *
  * @covers \Orders\Factory\Controller\ViewControllerFactory
  * @author Mathias Gelhausen <gelhausen@cross-solution.de>
- *  
+ *
  */
-class ViewControllerFactoryTest extends \PHPUnit_Framework_TestCase
+class ViewControllerFactoryTest extends \PHPUnit\Framework\TestCase
 {
-    use TestInheritanceTrait, ServiceManagerMockTrait;
+    use SetupTargetTrait, TestInheritanceTrait, ContainerDoubleTrait;
 
     /**
      *
@@ -40,8 +41,11 @@ class ViewControllerFactoryTest extends \PHPUnit_Framework_TestCase
     public function testInvokationCreatesViewController()
     {
         $repository = $this->getMockBuilder(Orders::class)->disableOriginalConstructor()->getMock();
-        $repositories = $this->createPluginManagerMock(['Orders' => ['service' => $repository, 'count' => 1]]);
-        $container = $this->createServiceManagerMock(['repositories' => ['service' => $repositories, 'count' => 1]]);
+        $repositories = $this->createContainerDouble(['Orders' => ['service' => $repository, 'count' => 1]]);
+        $container = $this->createContainerDouble(
+            ['repositories' => ['service' => $repositories, 'count' => 1]],
+            ['target' => \Interop\Container\ContainerInterface::class]
+        );
 
         $controller = $this->target->__invoke($container, 'irrelevant');
 
