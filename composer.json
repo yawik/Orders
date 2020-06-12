@@ -17,6 +17,9 @@
             "email": "me@itstoni.com"
         }
     ],
+    "support": {
+        "source": "https://github.com/yawik/orders"
+    },
     "keywords": [
         "yawik",
         "billing"
