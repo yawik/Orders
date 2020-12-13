@@ -25,7 +25,7 @@ class Module implements Feature\ConfigProviderInterface, VersionProviderInterfac
 {
     use VersionProviderTrait;
 
-    const VERSION = '0.4.3';
+    const VERSION = '0.5.0';
 
     public function getConfig()
     {
