@@ -19,9 +19,9 @@ use Settings\Entity\InitializeAwareSettingsContainerInterface;
  */
 class SettingsContainer extends ModuleSettingsContainer implements InitializeAwareSettingsContainerInterface
 {
-    
+
     /**
-     * @ODM\EmbedOne(targetDocument="InvoiceAddressSettings")
+     * @ODM\EmbedOne(targetDocument="\Orders\Entity\InvoiceAddressSettings")
      */
     protected $invoiceAddress;
 
