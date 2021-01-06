@@ -27,7 +27,13 @@ composer require yawik/orders
 Documentation
 -------------
 
-http://yawik.readthedocs.io/en/latest/modules/orders/index.html
+Documentation is build via:
+
+```
+mkdocs gh-deploy --remote-branch gh-pages
+```
+
+https://yawik.github.io/Orders/
 
 
 Development
